@@ -9,6 +9,6 @@ publish:
     secret_key: $$ECR_EAST1_SECRET
     region: us-east-1
     repo: kubectl
-    tag: dev
+    tag: v1.2.4
     file: ./Dockerfile
     storage_driver: overlay
