@@ -1,0 +1,14 @@
+build:
+  image: alpine:latest
+  commands:
+    - wget http://storage.googleapis.com/kubernetes-release/release/v1.2.4/bin/linux/amd64/kubectl
+    - chmod +x kubectl
+publish:
+  ecr:
+    access_key: $$ECR_EAST1_ACCESS
+    secret_key: $$ECR_EAST1_SECRET
+    region: us-east-1
+    repo: kubectl
+    tag: dev
+    file: ./Dockerfile
+    storage_driver: overlay
